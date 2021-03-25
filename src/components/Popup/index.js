@@ -1,10 +1,10 @@
 import React from "react";
 import HostList from "../HostList";
 
-export default function Popup({ data, onSwitch }) {
+export default function Popup({ hosts }) {
     return (
         <div>
-            <HostList hosts={data.hosts} onSwitch={onSwitch} />
+            <HostList hosts={hosts} />
         </div>
     );
 }
