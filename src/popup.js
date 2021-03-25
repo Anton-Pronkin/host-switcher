@@ -1,5 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import Popup from "./components/Popup";
 
-ReactDOM.render(<Popup />, document.querySelector("#root"));
+const data = {};
+function switchHost(host) {};
+
+ReactDOM.render(<Popup data={data} onSwitch={switchHost} />, document.querySelector("#root"));
