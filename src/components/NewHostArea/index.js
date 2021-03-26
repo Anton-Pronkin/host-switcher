@@ -1,34 +1,18 @@
 import React, { useState } from "react";
-import HandlerManager from "../../utils/HandlerManager";
+import NewHostAreaButton from "../NewHostAreaButton";
+import NewHostAreaPanel from "../NewHostAreaPanel";
 
-export default function NewHostArea({updateHosts}) {
+export default function NewHostArea({ onHostChanged }) {
     const [shown, setShown] = useState(false);
-    const [name, setName] = useState("");
-    const [value, setValue] = useState("");
 
-    if (!shown) {
-        return <button onClick={() => setShown(true)}>Add new host</button>
+    if (shown) {
+        return <NewHostAreaPanel onHostAdded={onHostAdded} />;
     }
 
-    return (
-        <div>
-            <div>Name:</div><input type="text" onChange={changeName} />
-            <div>Value:</div><input type="text" onChange={changeValue} />
-            <button onClick={addHostClick}>Add new host</button>
-        </div>
-    );
+    return <NewHostAreaButton onClick={() => setShown(true)} />;
 
-    function changeName(event) {
-        setName(event.target.value);
-    }
-
-    function changeValue(event) {
-        setValue(event.target.value);
-    }
-
-    async function addHostClick() {
-        await HandlerManager.addHost({ name, value });
+    function onHostAdded() {
         setShown(false);
-        await updateHosts();
+        onHostChanged?.();
     }
 }
