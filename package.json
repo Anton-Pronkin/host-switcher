@@ -18,11 +18,13 @@
       "@babel/react"
     ],
     "plugins": [
-      "@babel/plugin-transform-runtime"
+      "@babel/plugin-transform-runtime",
+      "@babel/plugin-proposal-class-properties"
     ]
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/plugin-transform-runtime": "^7.13.10",
     "@babel/preset-env": "^7.13.12",
     "@babel/preset-react": "^7.12.13",

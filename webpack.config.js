@@ -35,6 +35,7 @@ module.exports = {
         port: 9000,
         progress: true,
         open: true,
+        disableHostCheck: true,
         historyApiFallback: {
             index: "popup.html"
         }

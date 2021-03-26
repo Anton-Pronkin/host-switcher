@@ -11,7 +11,19 @@ export default class ChromeManager {
         return tabs[0];
     }
     
-    static async updateUrl(tabId, url) {
-        return await chrome.tabs.update(tabId, { url });
+    static async createTab(url) {
+        return await chrome.tabs.create({ url });
+    }
+
+    static async loadFromStorage(key, defaultValue) {
+        return await chrome.storage.local.get({
+            [key]: defaultValue
+        });
+    }
+
+    static async saveToStorage(key, value) {
+        return await chrome.storage.local.set({
+            [key]: value
+        });
     }
 }
