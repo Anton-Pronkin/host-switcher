@@ -22,6 +22,10 @@ export default class BaseHandlerManager {
         return await this.storage.updateHost(host);
     }
 
+    async deleteHost(hostId) {
+        return await this.storage.deleteHost(hostId);
+    }
+
     async getCurrentUrl() {
         throw new Error("The getCurrentUrl must be implemented in a specific handler manager.");
     }

@@ -35,6 +35,13 @@ export default class BaseStorage {
         await this.set(BaseStorage.keys.hosts, hosts);
     }
 
+    async deleteHost(hostId) {
+        const originalHosts = await this.getHosts();
+
+        const hosts = originalHosts.filter(host => host.id !== hostId);
+        await this.set(BaseStorage.keys.hosts, hosts);
+    }
+
     async get(key, defaultValue) {
         if (this.cache.has(key)) {
             return this.cache.get(key);
