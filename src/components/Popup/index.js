@@ -11,7 +11,7 @@ export default function Popup() {
     
     return (
         <div>
-            <HostList hosts={hosts} />
+            <HostList hosts={hosts} onHostChanged={updateHosts} />
             <NewHostArea onHostChanged={updateHosts} />
         </div>
     );

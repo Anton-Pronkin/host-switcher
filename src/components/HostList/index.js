@@ -1,10 +1,10 @@
 import React from "react";
-import HostDescriptor from "../HostDescriptor";
+import HostArea from "../HostArea";
 
-export default function HostList({ hosts }) {
+export default function HostList({ hosts, onHostChanged }) {
     return (
         <div>
-            {hosts.map(host => <HostDescriptor host={host} key={host.id} />)}
+            {hosts.map(host => <HostArea host={host} key={host.id} onHostChanged={onHostChanged}/>)}
         </div>
     );
 }

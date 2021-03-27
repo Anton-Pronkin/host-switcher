@@ -18,6 +18,10 @@ export default class BaseHandlerManager {
         return await this.storage.addHost({ name, value });
     }
 
+    async updateHost(host) {
+        return await this.storage.updateHost(host);
+    }
+
     async getCurrentUrl() {
         throw new Error("The getCurrentUrl must be implemented in a specific handler manager.");
     }

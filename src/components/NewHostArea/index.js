@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import NewHostAreaButton from "../NewHostAreaButton";
-import NewHostAreaPanel from "../NewHostAreaPanel";
+import EditHostArea from "../EditHostArea";
 
 export default function NewHostArea({ onHostChanged }) {
     const [shown, setShown] = useState(false);
 
     if (shown) {
-        return <NewHostAreaPanel onHostAdded={onHostAdded} />;
+        return <EditHostArea onHostChanged={changeHost} onCancel={() => setShown(false)}/>;
     }
 
     return <NewHostAreaButton onClick={() => setShown(true)} />;
 
-    function onHostAdded() {
+    function changeHost() {
         setShown(false);
         onHostChanged?.();
     }

@@ -21,6 +21,20 @@ export default class BaseStorage {
         await this.set(BaseStorage.keys.hosts, hosts);
     }
 
+    async updateHost(changedHost) {
+        const originalHosts = await this.getHosts();
+
+        const index = originalHosts.findIndex(host => host.id === changedHost.id);
+        if (index < 0) {
+            return;
+        }
+
+        const hosts = originalHosts.slice();
+        hosts[index] = { ...changedHost };
+
+        await this.set(BaseStorage.keys.hosts, hosts);
+    }
+
     async get(key, defaultValue) {
         if (this.cache.has(key)) {
             return this.cache.get(key);
