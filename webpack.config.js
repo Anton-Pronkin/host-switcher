@@ -20,6 +20,24 @@ module.exports = {
                     }
                 }
             ]
+        }, {
+            test: /\.(png)$/,
+            use: [{
+              loader: 'file-loader',
+              options: {
+                name: '[name].[hash:4].[ext]',
+                outputPath: "../images/",
+              }
+            }]
+        }, {
+            test: /\.(woff(2)?)$/,
+            use: [{
+              loader: 'file-loader',
+              options: {
+                name: '[name].[ext]',
+                outputPath: "../fonts/",
+              }
+            }]
         }]
     },
     output: {
