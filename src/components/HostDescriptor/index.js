@@ -1,5 +1,5 @@
 import React from "react";
-import HandlerManager from "../../utils/HandlerManager";
+import { HandlerManager } from "../../utils/GlobalContext";
 
 export default function HostList({ host }) {
     return (

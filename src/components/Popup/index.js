@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import HostList from "../HostList";
 import NewHostArea from "../NewHostArea";
 import { useConstructor } from "../../utils/Hooks";
-import Storage from "../../utils/Storage";
+import { Storage } from "../../utils/GlobalContext";
 
 export default function Popup() {
     useConstructor(async () => await updateHosts());

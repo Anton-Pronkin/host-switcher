@@ -1,7 +1,7 @@
 export default class BaseStorage {
     static keys = {
         hosts: "hosts"
-    }; 
+    };
 
     cache = new Map();
 

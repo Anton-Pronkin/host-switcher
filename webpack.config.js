@@ -26,7 +26,7 @@ module.exports = {
         path: path.resolve(__dirname, './app/scripts/'),
         filename: "popup.js"
     },
-    devtool: 'cheap-module-source-map',
+    devtool: 'source-map',
     devServer: {
         contentBase: path.join(__dirname, "./app"),
         watchContentBase: true,

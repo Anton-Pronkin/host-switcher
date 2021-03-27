@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import HandlerManager from "../../utils/HandlerManager";
+import { HandlerManager } from "../../utils/GlobalContext";
 
 export default function NewHostAreaPanel({ onHostAdded }) {
     const [name, setName] = useState("");
