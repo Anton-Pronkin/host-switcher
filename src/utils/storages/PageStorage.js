@@ -1,6 +1,6 @@
 import BaseStorage from "./BaseStorage";
 
-export default class MemoryStorage extends BaseStorage {
+export default class PageStorage extends BaseStorage {
     storage = new Map();
 
     async load(key, defaultValue) {

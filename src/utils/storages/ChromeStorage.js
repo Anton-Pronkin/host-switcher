@@ -1,4 +1,4 @@
-import ChromeManager from "../utils/ChromeManager";
+import ChromeManager from "../ChromeManager";
 import BaseStorage from "./BaseStorage";
 
 export default class ChromeStorage extends BaseStorage {
