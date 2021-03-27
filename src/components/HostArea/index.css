@@ -1,0 +1,12 @@
+.hostArea {
+    padding: 8px;
+    margin: 4px 8px;
+    
+    border: 1px solid #d4d4d4;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.hostArea:hover {
+    border-color: #5f87ac;
+}

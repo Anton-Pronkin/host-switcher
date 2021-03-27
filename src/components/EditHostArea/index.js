@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { HandlerManager } from "../../utils/GlobalContext";
+import style from "./index.css";
 
 export default function EditHostArea({ host, onHostChanged, onCancel }) {
     const [name, setName] = useState(host ? host.name : "");

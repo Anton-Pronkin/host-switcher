@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import NewHostAreaButton from "../NewHostAreaButton";
 import EditHostArea from "../EditHostArea";
+import style from "./index.css";
 
 export default function NewHostArea({ onHostChanged }) {
     const [isEditing, setIsEditing] = useState(false);

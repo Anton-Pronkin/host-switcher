@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import HostAreaDescriptor from "../HostAreaDescriptor";
 import EditHostArea from "../EditHostArea";
 import DeleteHostArea from "../DeleteHostArea";
+import style from "./index.css";
 
 export default function HostArea({ host, onHostChanged }) {
     const modes = {
@@ -12,15 +13,23 @@ export default function HostArea({ host, onHostChanged }) {
 
     const [mode, setMode] = useState(modes.normal);
 
-    switch (mode) {
-        case modes.normal:
-            return <HostAreaDescriptor host={host} onEditClick={beginEditing} onDeleteClick={beginDeleting}/>;
+    return (
+        <div className={style.hostArea}>
+            {renderContent()}
+        </div>
+    );
 
-        case modes.editing:
-            return <EditHostArea host={host} onHostChanged={endEditing} onCancel={resetMode} />;
+    function renderContent() {
+        switch (mode) {
+            case modes.normal:
+                return <HostAreaDescriptor host={host} onEditClick={beginEditing} onDeleteClick={beginDeleting} />;
 
-        case modes.deleting:
-            return <DeleteHostArea host={host} onDelete={onHostChanged} onCancel={resetMode} />
+            case modes.editing:
+                return <EditHostArea host={host} onHostChanged={endEditing} onCancel={resetMode} />;
+
+            case modes.deleting:
+                return <DeleteHostArea host={host} onDelete={onHostChanged} onCancel={resetMode} />;
+        }
     }
 
     function resetMode() {

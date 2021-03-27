@@ -3,6 +3,8 @@ import HostList from "../HostList";
 import NewHostArea from "../NewHostArea";
 import { useConstructor } from "../../utils/Hooks";
 import { Storage } from "../../utils/GlobalContext";
+import "@fontsource/titillium-web";
+import style from "./index.css";
 
 export default function Popup() {
     useConstructor(async () => await updateHosts());
@@ -10,7 +12,7 @@ export default function Popup() {
     const [hosts, setHosts] = useState([]);
     
     return (
-        <div>
+        <div className={style.popup}>
             <HostList hosts={hosts} onHostChanged={updateHosts} />
             <NewHostArea onHostChanged={updateHosts} />
         </div>

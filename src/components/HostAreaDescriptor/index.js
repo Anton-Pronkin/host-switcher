@@ -1,14 +1,16 @@
 import React from "react";
 import { HandlerManager } from "../../utils/GlobalContext";
+import style from "./index.css";
 
 export default function HostAreaDescriptor({ host, onEditClick, onDeleteClick }) {
     return (
-        <div>
-            <div>Name: {host.name}</div>
-            <div>Value: {host.value}</div>
-            <button onClick={switchHost}>Switch host</button>
-            <button onClick={onEditClick}>Edit host</button>
-            <button onClick={onDeleteClick}>Delete host</button>
+        <div className={style.hostAreaDescriptor}>
+            <div className={style.hostAreaDescriptor_host} onClick={switchHost}>
+                <div className={style.hostAreaDescriptor_name}>{host.name}</div>
+                <div className={style.hostAreaDescriptor_value}>{host.value}</div>
+            </div>
+            <div onClick={onEditClick} className={`${style.hostAreaDescriptor_button} ${style.hostAreaDescriptor_button__edit}`}></div>
+            <div onClick={onDeleteClick} className={`${style.hostAreaDescriptor_button} ${style.hostAreaDescriptor_button__delete}`}></div>
         </div>
     );
 

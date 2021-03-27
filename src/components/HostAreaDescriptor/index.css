@@ -1,0 +1,65 @@
+.hostAreaDescriptor {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.hostAreaDescriptor_host {
+    flex-grow: 1;
+    padding: 0 24px 0 8px;
+    cursor: pointer;
+}
+
+.hostAreaDescriptor_button {
+    padding: 6px;
+    margin: 2px;
+    width: 16px;
+    height: 16px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: 0.2s;
+    opacity: 0;
+}
+
+.hostAreaDescriptor:hover .hostAreaDescriptor_button {
+    opacity: 0.1;
+}
+
+.hostAreaDescriptor_button:hover {
+    border-radius: 4px;
+    background-color: #8bb7d457;
+    opacity: 0.8 !important;
+}
+
+.hostAreaDescriptor_button:active {
+    transform: scale(0.9);
+}
+
+.hostAreaDescriptor_button__edit {
+    background-image: url('../../images/pen.png');
+}
+
+.hostAreaDescriptor_button__delete {
+    background-image: url('../../images/cross.png');
+}
+
+.hostAreaDescriptor_name {
+    max-width: 600px;
+    overflow: hidden;
+
+    font-size: 20px;
+    font-weight: 600;
+    color: #222222;
+    text-overflow: ellipsis;
+}
+
+.hostAreaDescriptor_value {
+    max-width: 600px;
+    overflow: hidden;
+
+    font-size: 14px;
+    color: #7e7e7e;
+    text-overflow: ellipsis;
+}
