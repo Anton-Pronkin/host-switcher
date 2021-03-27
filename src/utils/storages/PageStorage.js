@@ -1,13 +1,22 @@
 import BaseStorage from "./BaseStorage";
 
 export default class PageStorage extends BaseStorage {
-    storage = new Map();
-
     async load(key, defaultValue) {
-        return this.storage.has(key) ? this.storage.get(key) : defaultValue;
+        try {
+            const jsonValue = window.localStorage.getItem(key);
+            if (!jsonValue) {
+                return defaultValue;
+            }
+
+            return JSON.parse(jsonValue);
+        }
+        catch {
+            return defaultValue;
+        }
     }
 
     async save(key, value) {
-        this.storage.set(key, value);
+        var jsonValue = JSON.stringify(value);
+        window.localStorage.setItem(key, jsonValue);
     }
 }
