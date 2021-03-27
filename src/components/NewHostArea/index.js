@@ -3,16 +3,24 @@ import NewHostAreaButton from "../NewHostAreaButton";
 import EditHostArea from "../EditHostArea";
 
 export default function NewHostArea({ onHostChanged }) {
-    const [shown, setShown] = useState(false);
+    const [isEditing, setIsEditing] = useState(false);
 
-    if (shown) {
-        return <EditHostArea onHostChanged={changeHost} onCancel={() => setShown(false)}/>;
+    if (isEditing) {
+        return <EditHostArea onHostChanged={changeHost} onCancel={endEditing}/>;
     }
 
-    return <NewHostAreaButton onClick={() => setShown(true)} />;
+    return <NewHostAreaButton onClick={beginEditing} />;
 
     function changeHost() {
-        setShown(false);
+        endEditing();
         onHostChanged?.();
+    }
+
+    function beginEditing() {
+        setIsEditing(true);
+    }
+
+    function endEditing() {
+        setIsEditing(false);
     }
 }
