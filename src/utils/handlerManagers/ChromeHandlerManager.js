@@ -7,7 +7,7 @@ export default class ChromeHandlerManager extends BaseHandlerManager {
     }
 
     async getCurrentUrl() {
-        return await ChromeManager.getCurrentTab();
+        return await ChromeManager.getCurrentUrl();
     }
 
     async doSwitchHost(newUrl) {

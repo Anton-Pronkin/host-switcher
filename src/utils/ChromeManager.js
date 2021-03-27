@@ -1,14 +1,14 @@
 import "chrome-extension-async";
 
 export default class ChromeManager {
-    static async getCurrentTab() {
+    static async getCurrentUrl() {
         const options = {
             currentWindow: true,
             active: true
         };
 
         const tabs = await chrome.tabs.query(options);
-        return tabs[0];
+        return tabs[0].url;
     }
 
     static async createTab(url) {
