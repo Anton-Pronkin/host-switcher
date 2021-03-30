@@ -1,7 +1,23 @@
+:root {
+    --color-text-primary: #222222;
+    --color-text-secondary: #7e7e7e;
+    
+    --color-action-normal: #d4d4d4;
+    --color-action-normal-light: #f7f7f7;
+    --color-action-hover: #5f87ac;
+    --color-action-selected: #8bb7d457;
+
+    --transition-duration-normal: 0.2s;
+
+    --border-normal: 1px solid var(--color-action-normal);
+    --border-normal-light: 1px solid var(--color-action-normal-light);
+}
+
 body {
     padding: 0;
     margin: 0;
     font-family: "Titillium Web";
+    user-select: none;
 }
 
 .popup {

@@ -2,11 +2,11 @@
     padding: 8px;
     margin: 4px 8px;
     
-    border: 1px solid #d4d4d4;
+    border: var(--border-normal);
     border-radius: 4px;
-    transition: 0.2s;
+    transition: var(--transition-duration-normal);
 }
 
 .hostArea:hover {
-    border-color: #5f87ac;
+    border-color: var(--color-action-hover);
 }

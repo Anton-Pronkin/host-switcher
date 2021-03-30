@@ -8,18 +8,18 @@
     padding: 4px 16px;
     
     font-size: 14px;
-    border: 1px solid #f7f7f7;
+    border: 1px solid var(--color-action-normal-light);
     border-radius: 4px;
     cursor: pointer;
     user-select: none;
-    transition: 0.2s;
+    transition: var(--transition-duration-normal);
+    color: var(--color-text-primary);
 }
 
 .newHostAreaButton_button:hover {
-    border-color: #5f87ac;
+    border-color: var(--color-action-hover);
 }
 
 .newHostAreaButton_button:active {
-    border-color: #415e79;
     transform: scale(0.95);
 }
