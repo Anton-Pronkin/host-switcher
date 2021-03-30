@@ -1,0 +1,18 @@
+.button {
+    margin: 0;
+    padding: 4px 16px;
+
+    border: var(--border-normal-light);
+    border-radius: 4px;
+    transition: var(--transition-duration-normal);
+
+    color: var(--color-text-primary);
+}
+
+.button:hover {
+    border-color: var(--color-action-hover);
+}
+
+.button:active {
+    transform: scale(0.95);
+}

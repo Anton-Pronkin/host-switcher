@@ -1,5 +1,6 @@
 import React from "react";
 import { HandlerManager } from "../../utils/GlobalContext";
+import Button from "../Button";
 import style from "./index.css";
 
 export default function DeleteHostArea({ host, onDelete, onCancel }) {
@@ -7,8 +8,8 @@ export default function DeleteHostArea({ host, onDelete, onCancel }) {
         <div className={style.deleteHostArea}>
             <div className={style.deleteHostArea_title}>Do you want to delete host "{host.name}" (URL: {host.value})?</div>
             <div className={style.deleteHostArea_buttonsArea}>
-                <div onClick={deleteHost} className={style.deleteHostArea_button}>Delete</div>
-                <div onClick={onCancel} className={style.deleteHostArea_button}>Cancel</div>
+                <Button onClick={deleteHost} className={style.deleteHostArea_button}>Delete</Button>
+                <Button onClick={onCancel} className={style.deleteHostArea_button}>Cancel</Button>
             </div>
         </div>
     );

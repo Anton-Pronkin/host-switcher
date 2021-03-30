@@ -13,20 +13,5 @@
 }
 
 .deleteHostArea_button {
-    margin: 4px 8px;
-    padding: 4px 16px;
-    border: var(--border-normal-light);
-
-    border-radius: 4px;
-    cursor: pointer;
-    transition: var(--transition-duration-normal);
-    color: var(--color-text-primary);
-}
-
-.deleteHostArea_button:hover {
-    border-color: var(--color-action-hover);
-}
-
-.deleteHostArea_button:active {
-    transform: scale(0.95);
+    margin: 8px 8px 4px;
 }

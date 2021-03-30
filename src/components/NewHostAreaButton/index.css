@@ -2,22 +2,7 @@
     text-align: right;
 }
 
-.newHostAreaButton_button {
+.newHostAreaButton_element {
     display: inline-block;
     margin: 4px 8px;
-    padding: 4px 16px;
-    
-    border: var(--border-normal-light);
-    border-radius: 4px;
-    cursor: pointer;
-    transition: var(--transition-duration-normal);
-    color: var(--color-text-primary);
-}
-
-.newHostAreaButton_button:hover {
-    border-color: var(--color-action-hover);
-}
-
-.newHostAreaButton_button:active {
-    transform: scale(0.95);
 }
