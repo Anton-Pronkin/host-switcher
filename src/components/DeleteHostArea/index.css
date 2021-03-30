@@ -1,23 +1,32 @@
-.newHostAreaButton {
-    text-align: right;
+.deleteHostArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.newHostAreaButton_button {
-    display: inline-block;
+.deleteHostArea_title {
+    text-align: center;
+}
+
+.deleteHostArea_buttonsArea {
+    display: flex;
+}
+
+.deleteHostArea_button {
     margin: 4px 8px;
     padding: 4px 16px;
-    
     border: var(--border-normal-light);
+
     border-radius: 4px;
     cursor: pointer;
     transition: var(--transition-duration-normal);
     color: var(--color-text-primary);
 }
 
-.newHostAreaButton_button:hover {
+.deleteHostArea_button:hover {
     border-color: var(--color-action-hover);
 }
 
-.newHostAreaButton_button:active {
+.deleteHostArea_button:active {
     transform: scale(0.95);
 }
