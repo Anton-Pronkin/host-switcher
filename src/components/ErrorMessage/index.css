@@ -1,0 +1,18 @@
+.errorMessage {
+    height: 36px;
+
+    color: var(--color-text-error);
+    font-weight: bold;
+    overflow-y: hidden;
+
+    transition: 0.2s ease-in-out;
+    font-size: var(--size-text-normal);
+}
+
+.errorMessage_animation {
+    font-size: var(--size-text-normal-focused);
+}
+
+.errorMessage_hidden {
+    height: 0;
+}
