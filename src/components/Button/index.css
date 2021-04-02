@@ -7,6 +7,7 @@
     transition: var(--transition-duration-normal);
 
     color: var(--color-text-primary);
+    cursor: pointer;
 }
 
 .button:hover {
