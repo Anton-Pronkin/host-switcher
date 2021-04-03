@@ -7,6 +7,7 @@
 
 .deleteHostArea_title {
     text-align: center;
+    word-break: break-word;
 }
 
 .deleteHostArea_buttonsArea {
