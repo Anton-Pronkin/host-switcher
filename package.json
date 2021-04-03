@@ -38,6 +38,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "@babel/runtime": "^7.13.10",
     "@fontsource/titillium-web": "^4.2.2",
     "chrome-extension-async": "^3.4.1",
     "classnames": "^2.2.6",
