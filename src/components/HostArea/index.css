@@ -6,6 +6,8 @@
     transition: var(--transition-duration-normal);
 }
 
-.hostArea:hover {
+.hostArea:hover,
+.hostArea:focus {
     border-color: var(--color-action-hover);
+    outline: none;
 }

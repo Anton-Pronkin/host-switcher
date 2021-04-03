@@ -10,8 +10,10 @@
     cursor: pointer;
 }
 
-.button:hover {
+.button:hover, 
+.button:focus {
     border-color: var(--color-action-hover);
+    outline: none;
 }
 
 .button:active {

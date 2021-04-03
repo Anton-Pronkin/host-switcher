@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { HandlerManager } from "../../utils/GlobalContext";
 import style from "./index.css";
 
-export default function HostAreaDescriptor({ host, onEditClick, onDeleteClick }) {
+export default function HostAreaDescriptor({ host, onSwitch, onEditClick, onDeleteClick }) {
     const [isMousePressed, setIsMousePressed] = useState(false);
 
     const buttonClass = style.hostAreaDescriptor_button;
@@ -12,7 +11,7 @@ export default function HostAreaDescriptor({ host, onEditClick, onDeleteClick })
             <div className={style.hostAreaDescriptor_host}>
                 <div className={style.hostAreaDescriptor_name}>{host.name}</div>
                 <div className={style.hostAreaDescriptor_value}>{host.value}</div>
-            </div>
+            </div>  
             <div onClick={onEditClick} className={`${buttonClass} ${style.hostAreaDescriptor_button__edit}`}></div>
             <div onClick={onDeleteClick} className={`${buttonClass} ${style.hostAreaDescriptor_button__delete}`}></div>
         </div>
@@ -29,7 +28,7 @@ export default function HostAreaDescriptor({ host, onEditClick, onDeleteClick })
             setIsMousePressed(false);
 
             if (checkActiveArea(event.target)) {
-                await HandlerManager.switchHost(host);
+                await onSwitch?.(host);
             }
         }
     }

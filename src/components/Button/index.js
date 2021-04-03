@@ -1,11 +1,20 @@
 import classNames from "classnames";
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { ifEnter } from "../../utils/EventHelper";
 import style from "./index.css";
 
 export default function Button(props) {
-    const className = classNames(style.button, props.className);
+    const ref = useRef();
+    if (props.autoFocus) {
+        useEffect(() => ref.current?.focus());
+    }
 
+    const className = classNames(style.button, props.className);
     return (
-        <div onClick={props.onClick} className={className}>{props.children}</div>
+        <div onClick={props.onClick} 
+             onKeyDown={ifEnter(props.onClick).else(props.onKeyDown)} 
+             className={className} 
+             tabIndex={0}
+             ref={ref}>{props.children}</div>
     );
 }

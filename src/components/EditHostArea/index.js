@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { HandlerManager } from "../../utils/GlobalContext";
+import { ifEnter, ifEscape, setLeftAsTab, setRightAsTab } from "../../utils/EventHelper";
 import Button from "../Button";
 import ErrorMessage from "../ErrorMessage";
 import style from "./index.css";
@@ -10,18 +11,31 @@ export default function EditHostArea({ host, onHostChanged, onCancel }) {
     const [message, setMessage] = useState({});
 
     return (
-        <div className={style.editHostArea}>
+        <div className={style.editHostArea} onKeyDown={ifEscape(onCancel)}>
             <ErrorMessage message={message} />
             <div className={style.editHostArea_fieldset}>
                 <label htmlFor="name">Name:</label>
-                <input type="text" id="name" className={style.editHostArea_input} onChange={changeName} defaultValue={name} maxLength={128} />
+                <input type="text" 
+                       id="name" 
+                       className={style.editHostArea_input} 
+                       defaultValue={name} 
+                       maxLength={128} 
+                       autoFocus
+                       onChange={changeName} 
+                       onKeyDown={ifEnter(saveHost)}/>
 
                 <label htmlFor="value">Value:</label>
-                <input type="text" id="value" className={style.editHostArea_input} onChange={changeValue} defaultValue={value} maxLength={1024} />
+                <input type="text" 
+                       id="value" 
+                       className={style.editHostArea_input} 
+                       defaultValue={value} 
+                       maxLength={1024} 
+                       onChange={changeValue}
+                       onKeyDown={ifEnter(saveHost)} />
             </div>
             <div className={style.editHostArea_buttonsArea}>
-                <Button onClick={saveHost}>Save host</Button>
-                <Button onClick={onCancel}>Cancel</Button>
+                <Button onClick={saveHost} onKeyDown={setRightAsTab}>Save host</Button>
+                <Button onClick={onCancel} onKeyDown={setLeftAsTab}>Cancel</Button>
             </div>
         </div>
     );
