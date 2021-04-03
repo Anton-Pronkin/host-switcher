@@ -14,7 +14,7 @@ export default function EditHostArea({ host, onHostChanged, onCancel }) {
         <div className={style.editHostArea} onKeyDown={ifEscape(onCancel)}>
             <ErrorMessage message={message} />
             <div className={style.editHostArea_fieldset}>
-                <label htmlFor="name">Name:</label>
+                <label htmlFor="name">Alias:</label>
                 <input type="text" 
                        id="name" 
                        className={style.editHostArea_input} 
@@ -24,7 +24,7 @@ export default function EditHostArea({ host, onHostChanged, onCancel }) {
                        onChange={changeName} 
                        onKeyDown={ifEnter(saveHost)}/>
 
-                <label htmlFor="value">Value:</label>
+                <label htmlFor="value">Host:</label>
                 <input type="text" 
                        id="value" 
                        className={style.editHostArea_input} 
