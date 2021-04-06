@@ -10,6 +10,7 @@ If you have multiple environments or you often use localhost for debugging, this
 - Add, remove, update hosts on the popup.
 - Each host can be associated with an alias.
 - Use your keyboard to choose (`Tab`, `Shift+Tab`, `Up`, `Down`, `Left`, `Right`), update (`Space`), delete (`Delete`), switch (`Enter`) hosts.
+- Ability to update the protocol if the target host contains it.
 
 ## Possible features
 - Reorder hosts on the popup.
@@ -18,7 +19,6 @@ If you have multiple environments or you often use localhost for debugging, this
 - Save the host configuration to file, load the host configuration from file.
 - Conditional hosts (suggest switching to the list of hosts depending on the current host).
 - Ability to map URL params in addition to the host.
-- Ability to update the schema if the added host contains it.
 - Possible localization.
 
 ## Dev features

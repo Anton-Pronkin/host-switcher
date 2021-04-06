@@ -6,12 +6,19 @@ export default class BaseHandlerManager {
     }
 
     async switchHost(host) {
-        const currentUrl = await this.getCurrentUrl();
+        let switchingUrl = new Url(host.value, host.value);
+        let currentUrl = await this.getCurrentUrl();
 
-        let url = new Url(currentUrl);
-        url.set('host', host.value);
+        let targetUrl = new Url(currentUrl);
+        if (switchingUrl.protocol) {
+            targetUrl.set('host', switchingUrl.host);
+            targetUrl.set('protocol', switchingUrl.protocol);
+        }
+        else {
+            targetUrl.set('host', host.value);
+        }
 
-        return await this.doSwitchHost(url.href);
+        return await this.doSwitchHost(targetUrl.toString());
     }
 
     async addHost({ name, value }) {

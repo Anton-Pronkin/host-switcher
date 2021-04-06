@@ -1,6 +1,6 @@
 {
   "name": "host-switcher",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Let's switch host!",
   "main": "index.js",
   "scripts": {
