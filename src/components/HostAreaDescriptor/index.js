@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import classNames from "classnames";
 import style from "./index.css";
 
 export default function HostAreaDescriptor({ host, onSwitch, onEditClick, onDeleteClick }) {
@@ -12,8 +13,8 @@ export default function HostAreaDescriptor({ host, onSwitch, onEditClick, onDele
                 <div className={style.hostAreaDescriptor_name}>{host.name}</div>
                 <div className={style.hostAreaDescriptor_value}>{host.value}</div>
             </div>  
-            <div onClick={onEditClick} className={`${buttonClass} ${style.hostAreaDescriptor_button__edit}`}></div>
-            <div onClick={onDeleteClick} className={`${buttonClass} ${style.hostAreaDescriptor_button__delete}`}></div>
+            <div onClick={onEditClick} className={classNames(buttonClass, style.hostAreaDescriptor_button__edit)}></div>
+            <div onClick={onDeleteClick} className={classNames(buttonClass, style.hostAreaDescriptor_button__delete)}></div>
         </div>
     );
 
