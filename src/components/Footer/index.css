@@ -1,8 +1,8 @@
-.newHostAreaButton {
+.footer {
     text-align: right;
 }
 
-.newHostAreaButton_element {
+.footer_button {
     display: inline-block;
     margin: 4px 8px;
 }

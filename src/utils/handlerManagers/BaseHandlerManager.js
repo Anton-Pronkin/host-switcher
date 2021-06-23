@@ -21,6 +21,19 @@ export default class BaseHandlerManager {
         return await this.doSwitchHost(targetUrl.toString());
     }
 
+    async createBookmarklet({ title, host }) {
+        const url = this.getBookmarkletUrl(host);
+        this.createBookmark({ title, url });
+    }
+
+    getBookmarkletUrl(host) {
+        if (host.indexOf("://") > -1) {
+            return `javascript:void(window.open("${host}"+location.pathname+location.search));`;
+        }
+
+        return`javascript:void(window.open(location.protocol+"//${host}"+location.pathname+location.search));`;
+    }
+
     async addHost({ name, value }) {
         return await this.storage.addHost({ name, value });
     }
@@ -39,5 +52,9 @@ export default class BaseHandlerManager {
 
     async doSwitchHost(newUrl) {
         throw new Error("The getCurrentUrl must be implemented in a specific handler manager.");
+    }
+
+    async createBookmark({ name, url }) {
+        throw new Error("The createBookmark must be implemented in a specific handler manager.");
     }
 }

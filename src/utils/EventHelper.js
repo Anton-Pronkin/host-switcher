@@ -42,6 +42,10 @@ export function setUpAsTab(event) {
     setKeyAsTab(event, "ArrowUp", focusPrev);
 }
 
+export function setDownAsTab(event) {
+    setKeyAsTab(event, "ArrowDown", focusNext);
+}
+
 function setKeyAsTab(event, key, focusHandler) {
     if (event.key === key) {
         focusHandler(event.target);

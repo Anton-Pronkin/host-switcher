@@ -13,4 +13,8 @@ export default class ChromeHandlerManager extends BaseHandlerManager {
     async doSwitchHost(newUrl) {
         return await ChromeManager.createTab(newUrl);
     }
+
+    async createBookmark({ title, url }) {
+        return await ChromeManager.createBookmark({ title, url });
+    }
 }

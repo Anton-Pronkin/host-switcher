@@ -12,5 +12,5 @@
         "default_title": "Switch host",
         "default_popup": "popup.html"
     },
-    "permissions": ["tabs", "storage"]
+    "permissions": ["tabs", "storage", "bookmarks"]
 }

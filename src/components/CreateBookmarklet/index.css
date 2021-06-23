@@ -1,0 +1,29 @@
+.createBookmarklet {
+    margin: 4px 8px;
+    padding: 8px;
+}
+
+.createBookmarklet_fieldset {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 4px 8px;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.createBookmarklet_input {
+    padding: 4px;
+    border: var(--border-normal);
+    border-radius: 2px;
+}
+
+.createBookmarklet_input:focus {
+    border-color: var(--color-action-hover);
+    outline: none;
+}
+
+.createBookmarklet_buttonsArea {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}

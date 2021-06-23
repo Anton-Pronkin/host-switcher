@@ -15,6 +15,10 @@ export default class ChromeManager {
         return await chrome.tabs.create({ url });
     }
 
+    static async createBookmark({ title, url }) {
+        return await chrome.bookmarks.create({ title, url });
+    }
+
     static async loadFromStorage(key, defaultValue) {
         return await chrome.storage.local.get({
             [key]: defaultValue

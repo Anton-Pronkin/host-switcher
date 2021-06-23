@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import HostList from "../HostList";
-import NewHostArea from "../NewHostArea";
+import FooterArea from "../FooterArea";
 import { useConstructor } from "../../utils/Hooks";
 import { Storage } from "../../utils/GlobalContext";
 import "@fontsource/titillium-web";
@@ -14,7 +14,7 @@ export default function Popup() {
     return (
         <div className={style.popup}>
             <HostList hosts={hosts} onHostChanged={updateHosts} />
-            <NewHostArea onHostChanged={updateHosts} />
+            <FooterArea onHostChanged={updateHosts} />
         </div>
     );
 
