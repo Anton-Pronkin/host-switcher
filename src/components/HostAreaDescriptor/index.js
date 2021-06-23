@@ -19,7 +19,7 @@ export default function HostAreaDescriptor({ host, onSwitch, onEditClick, onDele
     );
 
     function downMouse(event) {
-        if (checkActiveArea(event.target)) {
+        if (checkActiveArea(event.target) && event.buttons == 1) {
             setIsMousePressed(true);
         }
     }
