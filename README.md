@@ -4,13 +4,14 @@
 This is a small extension that helps to quickly switch hosts (and keep other URL parts).
 If you have multiple environments or you often use localhost for debugging, this will make it easier!
 
-![image](https://user-images.githubusercontent.com/54352931/113479330-28c67780-9497-11eb-8631-0ac241c00850.png)![image](https://user-images.githubusercontent.com/54352931/113479334-2c59fe80-9497-11eb-98f3-37c88b2aa8ec.png)
+![image](https://user-images.githubusercontent.com/54352931/113479330-28c67780-9497-11eb-8631-0ac241c00850.png)![image](https://user-images.githubusercontent.com/54352931/123553682-616ba980-d785-11eb-9043-19fdb3415189.png)
 
-## Available features (version 0.2.0)
+## Available features (version 0.2.1)
 - Add, remove, update hosts on the popup.
 - Each host can be associated with an alias.
 - Use your keyboard to choose (`Tab`, `Shift+Tab`, `Up`, `Down`, `Left`, `Right`), update (`Space`), delete (`Delete`), switch (`Enter`) hosts.
 - Ability to update the protocol if the target host contains it.
+- Ability to create a new bookmarklet - bookmark that allows you to switch host by clicking on it in the bookmarks bar.
 
 ## Possible features
 - Reorder hosts on the popup.
